@@ -27,8 +27,6 @@ public class Customer {
     private int custContactNumber;
     private String custNIC;
     private String custDrivingLicien;
-/*
     @OneToMany(mappedBy = "custEmail", cascade = CascadeType.ALL)
     private List<Rental_Detail> rental_details = new ArrayList<>();
-*/
 }

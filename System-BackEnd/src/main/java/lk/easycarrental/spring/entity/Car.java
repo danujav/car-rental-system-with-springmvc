@@ -34,6 +34,6 @@ public class Car {
     private String color;
     private int carQty;
     private double LDWCost;
-  /*  @OneToMany(mappedBy = "regNumber", cascade = CascadeType.ALL)
-    private List<Rental_Detail> rental_details = new ArrayList<>();*/
+    @OneToMany(mappedBy = "regNumber", cascade = CascadeType.ALL)
+    private List<Rental_Detail> rental_details = new ArrayList<>();
 }

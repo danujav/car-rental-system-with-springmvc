@@ -3,10 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <title>Easy Car Rental PVT (LTD)</title>
-    <link rel="shortcut icon" type="image/x-icon" href="asserts/img/favicon.png" />
-    <link href="assests/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png" />
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../System-FrontEnd/assets/css/style-sheet.css">
 </head>
 <body>
 
+<!--
+Following Tania Ruscia's tutorial on creating your own responsive dropdown navigation bar. https://www.taniarascia.com/responsive-dropdown-navigation-bar/
+-->
+<section>
+    <section class="navigation">
+        <div class="nav-container">
+            <div class="brand">
+                <a href="#!">Easy Car Rental pvt(LTD)</a>
+            </div>
+            <nav>
+                <div class="nav-mobile">
+                    <a id="nav-toggle" href="#!"><span></span></a>
+                </div>
+                <ul class="nav-list">
+                    <!-- Setting the links to #! will ensure that no action takes place on click. -->
+                    <li id="dashboard"><a href="#!">DashBoard</a></li>
+                    <li><a href="#!">Cars</a>
+                        <ul class="nav-dropdown">
+                            <li><a href="#!">General Cars</a></li>
+                            <li><a href="#!">Premium Cars</a></li>
+                            <li><a href="#!">Luxury Cars</a></li>
+                            <li><a href="#!">All Cars</a></li>
+                            <li id="manageCar"><a href="#!">Manage Cars</a></li>
+                        </ul>
+                    </li>
+                    <li id="fuck"><a href="#!">About</a></li>
+                    <li><a href="#!">Pricing</a></li>
+                    <li><a href="#!">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+</section>
+
+<section id="dashboardSection">
+    <h1 class="card">Dashboard</h1>
+    <div class="card">Click a card to select / deselect it.</div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card">Hi</div>
+</section>
+
+<section id="manageCarSection">
+    <h1>Manage Car</h1>
+</section>
+
+<script src="assets/js/jquery-3.6.0.min.js"></script>
+<script src="assets/js/util/Dashboard.js"></script>
+<script src="assets/js/util/NavBar.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
 </body>
 </html>

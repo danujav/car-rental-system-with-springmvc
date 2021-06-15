@@ -26,6 +26,6 @@ public class Driver {
     private int age;
     private String address;
     private int driverContactNumber;
-   /* @OneToMany(mappedBy = "driverEmail", cascade = CascadeType.ALL)
-    private List<Rental_Detail> rental_details = new ArrayList<>()*/;
+    @OneToMany(mappedBy = "driverEmail", cascade = CascadeType.ALL)
+    private List<Rental_Detail> rental_details = new ArrayList<>();
 }

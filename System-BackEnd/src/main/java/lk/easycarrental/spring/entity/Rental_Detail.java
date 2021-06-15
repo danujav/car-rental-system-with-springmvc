@@ -20,15 +20,18 @@ import javax.persistence.ManyToOne;
 public class Rental_Detail {
     @Id
     private String rentId;
-    private String rentDate;
-    private String rentTime;
-   /* @ManyToOne
-    @JoinColumn(name = "custEmail", referencedColumnName = "custEcmail", insertable = false, updatable = false)
+    private String getOnDate;
+    private String getOffDate;
+    private int duration;
+    private String status;
+
+    @ManyToOne
+    @JoinColumn(name = "custEmail",referencedColumnName = "custEmail")
     private Customer custEmail;
     @ManyToOne
-    @JoinColumn(name = "regNumber", referencedColumnName = "regNumber", insertable = false, updatable = false)
+    @JoinColumn(name = "regNumber",referencedColumnName = "regNumber")
     private Car regNumber;
     @ManyToOne
-    @JoinColumn(name = "driverEmail", referencedColumnName = "driverEmail", insertable = false, updatable = false)
-    private Driver driverEmail;*/
+    @JoinColumn(name = "driverEmail",referencedColumnName = "driverEmail")
+    private Driver driverEmail;
 }
