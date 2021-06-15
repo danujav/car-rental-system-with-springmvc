@@ -1,8 +1,8 @@
 package lk.easycarrental.spring.controller;
 
-import lk.easycarrental.spring.dto.DriverDTO;
+import lk.easycarrental.spring.dto.LoginDTO;
 import lk.easycarrental.spring.exception.NotFoundException;
-import lk.easycarrental.spring.service.DriverService;
+import lk.easycarrental.spring.service.LoginService;
 import lk.easycarrental.spring.util.StandardResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -13,48 +13,49 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 
 /**
- * @author : Danuja 6/15/21 1:29 AM
+ * @author : Danuja 6/15/21 4:34 PM
  * @version 1.0
  */
 @RestController
-@RequestMapping("/api/v1/driver")
-public class DriverController {
+@RequestMapping("/api/v1/login")
+public class LoginController {
+
     @Autowired
-    private DriverService service;
+    private LoginService service;
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity saveDriver(@RequestBody DriverDTO dto) {
-        if (dto.getDriverEmail().trim().length() <= 0 ) {
-            throw new NotFoundException("Driver email address cannot be Empty!");
+    public ResponseEntity saveLogin(@RequestBody LoginDTO dto) {
+        if (dto.getEmail().trim().length() <= 0 ) {
+            throw new NotFoundException("Login user's email cannot be Empty!");
         }
-        service.saveDriver(dto);
+        service.saveLogin(dto);
         return new ResponseEntity(new StandardResponse("201", "Done", dto), HttpStatus.CREATED);
     }
 
     @GetMapping(path = "/{email}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity searchDriver(@PathVariable String email) {
-        DriverDTO driverDTO = service.searchDriver(email);
-        return new ResponseEntity(new StandardResponse("200", "Done", driverDTO), HttpStatus.OK);
+    public ResponseEntity searchLogin(@PathVariable String email) {
+        LoginDTO loginDTO = service.searchLogin(email);
+        return new ResponseEntity(new StandardResponse("200", "Done", loginDTO), HttpStatus.OK);
     }
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity getAllDriver() {
-        ArrayList<DriverDTO> allDrivers = service.getAllDrivers();
-        return new ResponseEntity(new StandardResponse("200", "Done", allDrivers), HttpStatus.OK);
+    public ResponseEntity getAllLogins() {
+        ArrayList<LoginDTO> allLogins = service.getAllLogins();
+        return new ResponseEntity(new StandardResponse("200", "Done", allLogins), HttpStatus.OK);
     }
 
     @DeleteMapping(params = {"email"}, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity deleteDriver(@RequestParam String email) {
-        service.deleteDriver(email);
+    public ResponseEntity deleteLogin(@RequestParam String email) {
+        service.deleteLogin(email);
         return new ResponseEntity(new StandardResponse("200", "Done", null), HttpStatus.OK);
     }
 
     @PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity updateDriver(@RequestBody DriverDTO dto) {
-        if(dto.getDriverEmail().trim().length() <= 0 ) {
-            throw new NotFoundException("No customer email provided to update");
+    public ResponseEntity updateLogin(@RequestBody LoginDTO dto) {
+        if(dto.getEmail().trim().length() <= 0 ) {
+            throw new NotFoundException("Login user not provided email to update");
         }
-        service.updateDriver(dto);
+        service.updateLogin(dto);
         return new ResponseEntity(new StandardResponse("200", "Done", dto), HttpStatus.OK);
     }
 }

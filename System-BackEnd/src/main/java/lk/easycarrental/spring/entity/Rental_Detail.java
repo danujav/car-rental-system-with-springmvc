@@ -22,7 +22,7 @@ public class Rental_Detail {
     private String rentId;
     private String rentDate;
     private String rentTime;
-    @ManyToOne
+   /* @ManyToOne
     @JoinColumn(name = "custEmail", referencedColumnName = "custEcmail", insertable = false, updatable = false)
     private Customer custEmail;
     @ManyToOne
@@ -30,5 +30,5 @@ public class Rental_Detail {
     private Car regNumber;
     @ManyToOne
     @JoinColumn(name = "driverEmail", referencedColumnName = "driverEmail", insertable = false, updatable = false)
-    private Driver driverEmail;
+    private Driver driverEmail;*/
 }

@@ -67,4 +67,41 @@ public class JPAConfig {
     public PlatformTransactionManager transactionManager(EntityManagerFactory emf) {
         return new JpaTransactionManager(emf);
     }
+
+   /* @Bean
+    public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource ds, JpaVendorAdapter va) {
+        LocalContainerEntityManagerFactoryBean factoryBean = new LocalContainerEntityManagerFactoryBean();
+        factoryBean.setDataSource(ds);
+        factoryBean.setJpaVendorAdapter(va);
+        factoryBean.setPackagesToScan("lk.easycarrental.spring.entity");
+
+        return factoryBean;
+    }
+
+    @Bean
+    public DataSource dataSource() {
+        DriverManagerDataSource dataSource = new DriverManagerDataSource();
+        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/EasyCarRental?createDatabaseIfNotExist=true");
+        dataSource.setUsername("root");
+        dataSource.setPassword("25412541");
+
+        return dataSource;
+    }
+
+    @Bean
+    public JpaVendorAdapter vendorAdapter() {
+        HibernateJpaVendorAdapter va = new HibernateJpaVendorAdapter();
+        va.setDatabasePlatform("org.hibernate.dialect.MySQL57Dialect");
+        va.setDatabase(Database.MYSQL);
+        va.setGenerateDdl(true);
+        va.setShowSql(true);
+
+        return va;
+    }
+
+    @Bean
+    public PlatformTransactionManager transactionManager(EntityManagerFactory emf) {
+        return new JpaTransactionManager(emf);
+    }*/
 }
