@@ -305,3 +305,12 @@ nav ul li ul li a {
     /*background: linear-gradient(135deg,#3a8ffe 0%,#9658fe 100%);*/
     background: #30336b;
 }
+
+ /*for save button*/
+.btn {
+    background: #30336b;
+    color: white;
+    /*position: relative;
+    right: 50%;
+    bottom: 15px;*/
+}

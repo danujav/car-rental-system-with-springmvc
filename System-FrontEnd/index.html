@@ -62,9 +62,14 @@ Following Tania Ruscia's tutorial on creating your own responsive dropdown navig
                 <section class="row mt-5" >
                     <section class="col-lg-6" id="form-center">
                         <form id="frmCustomer">
-                            <div>
+                            <!--<div>
                                 <label class="form-label input-names" for="registrationNumber">Registration number</label>
                                 <input name="regNum" class="form-control" id="registrationNumber" type="text" placeholder="What is your car's registration number" aria-label="default input example">
+                            </div>-->
+                            <div class="input-group mb-3">
+                                <!--<label class="form-label input-names mt-4" >Registration Number</label>-->
+                                <input name="regNum" type="text"  class="form-control" placeholder="What is your car's registration number" aria-label="default input example" aria-describedby="button-addon2">
+                                <button class="btn btn-outline-secondary" style="z-index: 0" type="button" id="button-addon2">Search</button>
                             </div>
                             <div>
                                 <label class="form-label input-names mt-4" for="brand">Brand</label>
@@ -145,11 +150,11 @@ Following Tania Ruscia's tutorial on creating your own responsive dropdown navig
                             <br>
                             <hr class="mt-5">
                             <div class="btn-group mt-5">
-                                <button class="btn btn-primary" id="btnSave" type="button">Register Customer</button>
-                                <button class="btn btn-info" id="btnSearch" type="button">Search</button>
-                                <button class="btn btn-danger" id="btnRemove" type="button">Remove</button>
-                                <button class="btn btn-warning" id="btnGetAll" type="button">Get All</button>
+                                <button style="background: #30336b" class="btn" id="btnSave" type="button">Save car</button>
                             </div>
+                            <br>
+                            <br>
+                            <br>
                         </form>
                     </section>
                 </section>
