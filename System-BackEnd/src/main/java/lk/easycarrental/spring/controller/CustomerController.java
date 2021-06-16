@@ -18,6 +18,7 @@ import java.util.ArrayList;
  */
 @RestController
 @RequestMapping("/api/v1/customer")
+@CrossOrigin
 public class CustomerController {
 
     @Autowired
@@ -25,6 +26,7 @@ public class CustomerController {
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity saveCustomer(@RequestBody CustomerDTO dto) {
+        System.out.println("POST");
         if (dto.getCustEmail().trim().length() <= 0 ) {
             throw new NotFoundException("Customer email cannot be Empty!");
         }
