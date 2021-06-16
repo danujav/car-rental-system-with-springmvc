@@ -29,3 +29,79 @@ defaultBtn.addEventListener("change", function(){
         fileName.textContent = valueStore;
     }
 });
+    /*==============================================================*/
+    /*for save button*/
+
+    $( "#btnSave" ).click(function() {
+        /*var fileObject = $("#default-btn")[0].files[0];//access file object from input field
+        var fileName = $("#default-btn")[0].files[0].name; //get file name
+        var data = new FormData(); //setup form data object to send file data
+        data.append("file", fileObject, fileName); //append data*/
+      /*  $.ajax({
+            method: 'POST',
+            url: 'http://localhost:8080/backend/api/v1/car',
+            async: true,
+            processData: false, //stop processing data of request body
+            contentType: false, // stop setting content type by jQuery
+            data: data,
+            success: function () {
+                alert("File Uploaded");
+            }
+        });*/
+        alert("He")
+        saveCar();
+    });
+
+    function saveCar() {
+        let carReg = $("#carReg").val();
+        let brand = $("#brand").val();
+        let color = $("#color").val();
+        let qty = $("#qty").val();
+        let dailyRate = $("#dailyRate").val();
+        let extraPriceForKM = $("#extraPriceForKM").val();
+        let freeMileageForPrice = $("#freeMileageForPrice").val();
+        let fuelType = $("#fuelType").val();
+        let monthlyRate = $("#monthlyRate").val();
+        let noOfPassenger = $("#noOfPassenger").val();
+        let transmissionType = $("#transmissionType").val();
+        let ldw = $("#ldw").val();
+        let type = $("#type").val();
+        $.ajax({
+            method: "POST",
+            url: "http://localhost:8080/backend/api/v1/car",
+            contentType: 'application/json',
+            async: true,
+            data: JSON.stringify({
+                regNumber : carReg,
+                loose : ldw,
+                brand : brand,
+                type : type,
+                noOfPassenger : noOfPassenger,
+                transmissionOnType : transmissionType,
+                fuelType : fuelType,
+                dailyRate : dailyRate,
+                monthlyRate : monthlyRate,
+                freeMileageForPrice : freeMileageForPrice,
+                extraPriceForKM : extraPriceForKM,
+                color : color,
+                carQty : qty,
+                /*LDWCost : ldw,*/
+                /*avStatus : "available"*/
+            }),
+            success: function (data) {
+                console.log(data);
+            }
+        });
+
+      /*  let formData = $("#formCar").serialize();
+        $.ajax({
+            method: "POST",
+            url: "http://localhost:8080/backend/api/v1/car",
+            contentType: 'application/json',
+            async: true,
+            data: formData,
+            success: function (data) {
+                console.log(data);
+            }
+        });*/
+    }

@@ -17,6 +17,7 @@ import java.util.List;
 @Data
 public class CarDTO {
     private String regNumber;
+    private Double loose;
     private String brand;
     private String type;
     private int noOfPassenger;
@@ -27,6 +28,7 @@ public class CarDTO {
     private String freeMileageForPrice;
     private double extraPriceForKM;
     private String color;
+    /*private double LDWCost;*/
     private int carQty;
-    private double LDWCost;
+    /*private String avStatus;*/
 }
