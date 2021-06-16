@@ -200,12 +200,18 @@ nav ul li ul li a {
     border-style: solid;
     border-color: rgb(201, 76, 76);
 }*/
-#form-border {
+/*#form-border {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}*/
+.form-border {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-#form-center {
+
+.form-center {
     /*display: flex;
     justify-content: center;
     align-items: center;*/
@@ -313,4 +319,27 @@ nav ul li ul li a {
     /*position: relative;
     right: 50%;
     bottom: 15px;*/
+}
+
+
+    /*////////////////////////////////*/
+.font-login {
+    color: gray;
+    font-weight: lighter;
+    font-size: medium;
+}
+.vl {
+    border-left: 2px solid gray;
+    height: 100%;
+}
+#p {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+#p-already {
+    margin-left: 55px;
+}
+.btnReg {
+    width: 100%;
 }

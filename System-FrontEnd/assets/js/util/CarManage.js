@@ -50,7 +50,6 @@ defaultBtn.addEventListener("change", function(){
                 alert("File Uploaded");
             }
         });
-        alert("He")
 
     });
 
@@ -95,3 +94,17 @@ defaultBtn.addEventListener("change", function(){
             }
         });
     }
+
+    $( "#btnSearch" ).click(function() {
+        let carReg = $("#carReg").val();
+        $.ajax({
+            method: 'GET',
+            url: 'http://localhost:8080/backend/api/v1/car/' + carReg,
+            contentType: 'application/json',
+            async: true,
+            success: function (response) {
+                console.log(Object.values(response).in);
+            }
+        });
+
+    });

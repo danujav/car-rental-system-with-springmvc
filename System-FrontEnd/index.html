@@ -9,9 +9,6 @@
 </head>
 <body>
 
-<!--
-Following Tania Ruscia's tutorial on creating your own responsive dropdown navigation bar. https://www.taniarascia.com/responsive-dropdown-navigation-bar/
--->
 <section>
     <section class="navigation">
         <div class="nav-container">
@@ -34,7 +31,12 @@ Following Tania Ruscia's tutorial on creating your own responsive dropdown navig
                             <li id="manageCar"><a href="#!">Manage Cars</a></li>
                         </ul>
                     </li>
-                    <li id="fuck"><a href="#!">About</a></li>
+                    <li id="fuck"><a href="#!">Register</a>
+                        <ul class="nav-dropdown">
+                            <li id="registerCustomer"><a href="#!">As Customer</a></li>
+                            <li><a href="#!">As Driver</a></li>
+                        </ul>
+                    </li>
                     <li><a href="#!">Pricing</a></li>
                     <li><a href="#!">Contact</a></li>
                 </ul>
@@ -55,12 +57,12 @@ Following Tania Ruscia's tutorial on creating your own responsive dropdown navig
 
 <section id="manageCarSection">
     <section class="container-fluid">
-        <section id="form-border" class="row mt-3">
+        <section class="row mt-3 form-border">
             <section class=" col-lg-9 bg-white col-lg-offset-4">
                 <p class="mt-3">Fill in the details</p>
                 <hr>
                 <section class="row mt-5" >
-                    <section class="col-lg-6" id="form-center">
+                    <section class="col-lg-6 form-center" id="form-center">
                         <form id="formCar">
                             <!--<div>
                                 <label class="form-label input-names" for="registrationNumber">Registration number</label>
@@ -70,7 +72,7 @@ Following Tania Ruscia's tutorial on creating your own responsive dropdown navig
 
                                 <!--<label class="form-label input-names mt-4" >Registration Number</label>-->
                                 <input id="carReg" name="regNum" type="text"  class="form-control" placeholder="What is your car's registration number" aria-label="default input example" aria-describedby="button-addon2">
-                                <button class="btn btn-outline-secondary" style="z-index: 0" type="button" id="button-addon2">Search</button>
+                                <button class="btn btn-outline-secondary" style="z-index: 0" type="button" id="btnSearch">Search</button>
                             </div>
                             <div>
                                 <label class="form-label input-names mt-4" for="brand">Brand</label>
@@ -157,6 +159,62 @@ Following Tania Ruscia's tutorial on creating your own responsive dropdown navig
                             <br>
                             <br>
                         </form>
+
+                    </section>
+                </section>
+            </section>
+        </section>
+    </section>
+</section>
+
+<section id="registerCustomerSection">
+    <section class="container-fluid">
+        <section class="row mt-3 form-border">
+            <section class=" col-lg-9 bg-white col-lg-offset-4">
+                <section class="row">
+                    <section class="col-lg-5">
+                        <p id="p" class="mt-3">Sign up on easy car rental</p>
+                        <p class="font-login mt-0">The largest rental car marketplace in Sri Lanka</p>
+                    </section>
+                    <section class="col-lg-1 mt-3">
+                        <div class="vl"></div>
+                    </section>
+                    <section class="col-lg-6">
+                        <section class="row">
+                            <section class="col-lg-8">
+                                <form id="formCustomer">
+                                    <div>
+                                        <label class="form-label input-names mt-4" for="custName">Name</label>
+                                        <input class="form-control input-sm" placeholder="What's your name?" id="custName" type="text" placeholder="Default input" aria-label="default input example" name="custName">
+                                    </div>
+                                    <div>
+                                        <label class="form-label input-names mt-4" for="custEmail">Email</label>
+                                        <input class="form-control input-sm" placeholder="Your email address" id="custEmail" aria-label="default input example" name="custEmail" type="text">
+                                    </div>
+                                    <div>
+                                        <label class="form-label input-names mt-4" for="custAddress">Address</label>
+                                        <input class="form-control input-sm" placeholder="Address" id="custAddress" aria-label="default input example" name="custAddress" type="text">
+                                    </div>
+                                    <div>
+                                        <label class="form-label input-names mt-4" for="custNum">Number</label>
+                                        <input class="form-control input-sm" placeholder="Your telephone number here" id="custNum" aria-label="default input example" name="custNum" type="text">
+                                    </div>
+                                    <div>
+                                        <label class="form-label input-names mt-4" for="nic">NIC</label>
+                                        <input class="form-control input-sm" placeholder="National Identify card" id="nic" aria-label="default input example" name="custNic" type="text">
+                                    </div>
+                                    <div>
+                                        <label class="form-label input-names mt-4" for="custDrivingLicien">Driving Licien Number</label>
+                                        <input class="form-control input-sm" placeholder="Driving Licien Number" id="custDrivingLicien" aria-label="default input example" name="custDrivingLicien" type="text">
+                                    </div>
+                                    <button id="btnSignUp" type="button" class="btnReg btnSignUp btn-success mb-3 mt-3">Sign up</button>
+                                </form>
+                                <div>
+                                    <p id="p-already" class="mt-3">Already have an account?</p>
+                                    <button id="btnLogin" type="button" class="btnReg btn-secondary">Login</button>
+                                </div>
+                            </section>
+                        </section>
 
                     </section>
                 </section>

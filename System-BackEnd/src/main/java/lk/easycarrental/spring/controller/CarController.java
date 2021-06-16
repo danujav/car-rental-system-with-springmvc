@@ -114,9 +114,9 @@ public class CarController {
 
     }
 
-    @GetMapping(path = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity searchCar(@PathVariable String id) {
-        CarDTO carDTO = service.searchCar(id);
+    @GetMapping(path = "/{carReg}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity searchCar(@PathVariable String carReg) {
+        CarDTO carDTO = service.searchCar(carReg);
         return new ResponseEntity(new StandardResponse("200", "Done", carDTO), HttpStatus.OK);
     }
 
