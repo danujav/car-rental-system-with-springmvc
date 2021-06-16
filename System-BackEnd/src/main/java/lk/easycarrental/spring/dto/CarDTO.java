@@ -28,7 +28,6 @@ public class CarDTO {
     private String freeMileageForPrice;
     private double extraPriceForKM;
     private String color;
-    /*private double LDWCost;*/
     private int carQty;
     /*private String avStatus;*/
 }

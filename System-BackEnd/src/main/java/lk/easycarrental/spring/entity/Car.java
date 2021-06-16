@@ -33,9 +33,8 @@ public class Car {
     private String freeMileageForPrice;
     private double extraPriceForKM;
     private String color;
-    /*private double LDWCost;*/
     private int carQty;
-    /*private String avStatus;*/
+    /*private String avStatus*/;
     @OneToMany(mappedBy = "regNumber", cascade = CascadeType.ALL)
     private List<Rental_Detail> rental_details = new ArrayList<>();
 }

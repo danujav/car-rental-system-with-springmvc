@@ -22,8 +22,8 @@ import java.util.ArrayList;
  * @version 1.0
  */
 @RestController
-@CrossOrigin
 @RequestMapping("/api/v1/car")
+@CrossOrigin
 public class CarController {
 
     @Autowired
@@ -39,13 +39,13 @@ public class CarController {
         return new ResponseEntity(new StandardResponse("201", "Done", dto), HttpStatus.CREATED);
     }
 
-    @PostMapping(path = "/file" /*consumes = MediaType.MULTIPART_FORM_DATA_VALUE*/ /*produces = MediaType.APPLICATION_JSON_VALUE*/)
-    public boolean saveCarPhoto(@RequestPart("myFile") MultipartFile myFile) {
+    @PostMapping(path = "/file", consumes = MediaType.MULTIPART_FORM_DATA_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public boolean saveCarPhoto(@RequestPart("car-pic") MultipartFile myFile) {
         System.out.println("file Post");
         /*
          * There are three ways we can obtain this value, but in all cases we need to use
          * @RequestPart annotation.
-         * 1. Byte Array ( byte [] )
+         * 1. Byte Array
          * 2. MultipartFile ( Spring way )
          * 3. Part ( Java EE way )
          */

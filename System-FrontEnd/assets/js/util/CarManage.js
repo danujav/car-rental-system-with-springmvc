@@ -33,21 +33,21 @@ defaultBtn.addEventListener("change", function(){
     /*for save button*/
 
     $( "#btnSave" ).click(function() {
-        /*var fileObject = $("#default-btn")[0].files[0];//access file object from input field
+        var fileObject = $("#default-btn")[0].files[0];//access file object from input field
         var fileName = $("#default-btn")[0].files[0].name; //get file name
         var data = new FormData(); //setup form data object to send file data
-        data.append("file", fileObject, fileName); //append data*/
-      /*  $.ajax({
+        data.append("car-pic", fileObject, fileName); //append data
+        $.ajax({
             method: 'POST',
-            url: 'http://localhost:8080/backend/api/v1/car',
-            async: true,
+            url: 'http://localhost:8080/backend/api/v1/car/file',
+            async: false,
             processData: false, //stop processing data of request body
             contentType: false, // stop setting content type by jQuery
             data: data,
             success: function () {
                 alert("File Uploaded");
             }
-        });*/
+        });
         alert("He")
         saveCar();
     });
@@ -92,16 +92,4 @@ defaultBtn.addEventListener("change", function(){
                 console.log(data);
             }
         });
-
-      /*  let formData = $("#formCar").serialize();
-        $.ajax({
-            method: "POST",
-            url: "http://localhost:8080/backend/api/v1/car",
-            contentType: 'application/json',
-            async: true,
-            data: formData,
-            success: function (data) {
-                console.log(data);
-            }
-        });*/
     }
