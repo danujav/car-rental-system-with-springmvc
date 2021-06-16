@@ -33,6 +33,8 @@ defaultBtn.addEventListener("change", function(){
     /*for save button*/
 
     $( "#btnSave" ).click(function() {
+        saveCar();
+
         var fileObject = $("#default-btn")[0].files[0];//access file object from input field
         var fileName = $("#default-btn")[0].files[0].name; //get file name
         var data = new FormData(); //setup form data object to send file data
@@ -49,7 +51,7 @@ defaultBtn.addEventListener("change", function(){
             }
         });
         alert("He")
-        saveCar();
+
     });
 
     function saveCar() {

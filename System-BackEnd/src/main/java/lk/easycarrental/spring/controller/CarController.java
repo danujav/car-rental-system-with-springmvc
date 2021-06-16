@@ -29,9 +29,12 @@ public class CarController {
     @Autowired
     private CarService service;
 
+    private String carType;
+
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity saveCar(@RequestBody CarDTO dto) {
-        System.out.println("Just Post");
+        carType = dto.getType();
+
         if (dto.getRegNumber().trim().length() <= 0 ) {
             throw new NotFoundException("Car Registration number cannot be Empty!");
         }
@@ -41,7 +44,6 @@ public class CarController {
 
     @PostMapping(path = "/file", consumes = MediaType.MULTIPART_FORM_DATA_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public boolean saveCarPhoto(@RequestPart("car-pic") MultipartFile myFile) {
-        System.out.println("file Post");
         /*
          * There are three ways we can obtain this value, but in all cases we need to use
          * @RequestPart annotation.
@@ -54,24 +56,62 @@ public class CarController {
         //  Check WebAppConfig and WebAppInitializer
         //  In spring boot we dont need to add those two configurations
 
-        System.out.println(myFile.getOriginalFilename());;
-        System.out.println("method calling");
-        try {
-            // Let's get the project location
-            String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
-            // Let's create a folder there for uploading purposes, if not exists
-            File uploadsDir = new File(projectPath + "/uploads");
-            uploadsDir.mkdir();
-            // It is time to transfer the file into the newly created dir
-            myFile.transferTo(new File(uploadsDir.getAbsolutePath() + "/" + myFile.getOriginalFilename()));
-            return true;
-        } catch (URISyntaxException e) {
-            e.printStackTrace();
-            return false;
-        } catch (IOException e) {
-            e.printStackTrace();
+        /*System.out.println(myFile.getOriginalFilename());;*/
+        if (carType.equals("General") || carType.equals("general")) {
+            try {
+                // Let's get the project location
+                String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
+                // Let's create a folder there for uploading purposes, if not exists
+                File uploadsDir = new File(projectPath + "/CarList/General");
+                uploadsDir.mkdir();
+                // It is time to transfer the file into the newly created dir
+                myFile.transferTo(new File(uploadsDir.getAbsolutePath() + "/" + myFile.getOriginalFilename()));
+                return true;
+            } catch (URISyntaxException e) {
+                e.printStackTrace();
+                return false;
+            } catch (IOException e) {
+                e.printStackTrace();
+                return false;
+            }
+        } else if (carType.equals("Premium") || carType.equals("premium")) {
+            try {
+                // Let's get the project location
+                String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
+                // Let's create a folder there for uploading purposes, if not exists
+                File uploadsDir = new File(projectPath + "/CarList/Premium");
+                uploadsDir.mkdir();
+                // It is time to transfer the file into the newly created dir
+                myFile.transferTo(new File(uploadsDir.getAbsolutePath() + "/" + myFile.getOriginalFilename()));
+                return true;
+            } catch (URISyntaxException e) {
+                e.printStackTrace();
+                return false;
+            } catch (IOException e) {
+                e.printStackTrace();
+                return false;
+            }
+        } else if (carType.equals("Luxury") || carType.equals("luxury")) {
+            try {
+                // Let's get the project location
+                String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
+                // Let's create a folder there for uploading purposes, if not exists
+                File uploadsDir = new File(projectPath + "/CarList/Luxury");
+                uploadsDir.mkdir();
+                // It is time to transfer the file into the newly created dir
+                myFile.transferTo(new File(uploadsDir.getAbsolutePath() + "/" + myFile.getOriginalFilename()));
+                return true;
+            } catch (URISyntaxException e) {
+                e.printStackTrace();
+                return false;
+            } catch (IOException e) {
+                e.printStackTrace();
+                return false;
+            }
+        } else {
             return false;
         }
+
     }
 
     @GetMapping(path = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
