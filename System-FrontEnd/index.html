@@ -31,7 +31,7 @@
                             <li id="manageCar"><a href="#!">Manage Cars</a></li>
                         </ul>
                     </li>
-                    <li id="fuck"><a href="#!">Register</a>
+                    <li id="fuck"><a href="#!">Login</a>
                         <ul class="nav-dropdown">
                             <li id="registerCustomer"><a href="#!">As Customer</a></li>
                             <li><a href="#!">As Driver</a></li>
@@ -176,7 +176,7 @@
                         <p id="p" class="mt-3">Sign up on easy car rental</p>
                         <p class="font-login mt-0">The largest rental car marketplace in Sri Lanka</p>
                     </section>
-                    <section class="col-lg-1 mt-3">
+                    <section class="col-lg-1 mt-3 mb-3">
                         <div class="vl"></div>
                     </section>
                     <section class="col-lg-6">
@@ -207,11 +207,65 @@
                                         <label class="form-label input-names mt-4" for="custDrivingLicien">Driving Licien Number</label>
                                         <input class="form-control input-sm" placeholder="Driving Licien Number" id="custDrivingLicien" aria-label="default input example" name="custDrivingLicien" type="text">
                                     </div>
+
+
+                                    <div>
+                                        <label class="form-label input-names mt-4" for="password">Password</label>
+                                        <input type="password" class="form-control" id="password" placeholder="keep this password your memory">
+                                    </div>
+                                    <div>
+                                        <label class="form-label input-names mt-4" for="confirmPassword">Confirm password</label>
+                                        <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm password">
+                                    </div>
+
+
                                     <button id="btnSignUp" type="button" class="btnReg btnSignUp btn-success mb-3 mt-3">Sign up</button>
                                 </form>
                                 <div>
                                     <p id="p-already" class="mt-3">Already have an account?</p>
                                     <button id="btnLogin" type="button" class="btnReg btn-secondary">Login</button>
+                                    <hr>
+                                </div>
+                            </section>
+                        </section>
+
+                    </section>
+                </section>
+            </section>
+        </section>
+    </section>
+</section>
+
+<section id="loginCustomerSection">
+    <section class="container-fluid">
+        <section class="row mt-3 form-border">
+            <section class=" col-lg-9 bg-white col-lg-offset-4">
+                <section class="row">
+                    <section class="col-lg-5">
+                        <p id="p" class="mt-3">Sign up on easy car rental</p>
+                        <p class="font-login mt-0">The largest rental car marketplace in Sri Lanka</p>
+                    </section>
+                    <section class="col-lg-1 mt-3 mb-3">
+                        <div class="vl"></div>
+                    </section>
+                    <section class="col-lg-6">
+                        <section class="row">
+                            <section class="col-lg-8">
+                                <form id="formLogin">
+                                    <div>
+                                        <label class="form-label input-names mt-4" for="custLoginEmail">Email</label>
+                                        <input class="form-control input-sm" placeholder="Your email address" id="custLoginEmail" aria-label="default input example" name="custEmail" type="text">
+                                    </div>
+                                    <div>
+                                        <label class="form-label input-names mt-4" for="loginPassword">Password</label>
+                                        <input type="password" class="form-control" id="loginPassword" placeholder="Password">
+                                    </div>
+                                    <button id="btnLog" type="button" class="btnReg btnSignUp btn-success mb-3 mt-3">Login</button>
+                                </form>
+                                <div>
+                                    <p id="p-already2" class="mt-3">Dont' have an account yet?</p>
+                                    <button id="btnSign" type="button" class="btnReg btn-secondary">Sign up</button>
+                                    <hr>
                                 </div>
                             </section>
                         </section>
@@ -228,6 +282,7 @@
 <script src="assets/js/util/NavBar.js"></script>
 <script src="assets/js/util/CarManage.js"></script>
 <script src="assets/js/util/CustomerMange.js"></script>
+<script src="assets/js/util/LoginManage.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
 </body>
 </html>
