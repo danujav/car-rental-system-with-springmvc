@@ -34,6 +34,8 @@ dashboardBtn.addEventListener('click', function () {
     registerCustomerSection.style.display = "none";
     loginCustomerSection.style.display = "none";
     dashboardSection.style.display = "block";
+    loginCustomerSection.style.display = "none";
+    loginDriverSection.style.display = "none";
 });
 registerCustomerBtn.addEventListener('click', function () {
     manageCarSection.style.display = "none";

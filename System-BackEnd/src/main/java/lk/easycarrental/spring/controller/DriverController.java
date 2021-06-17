@@ -18,6 +18,7 @@ import java.util.ArrayList;
  */
 @RestController
 @RequestMapping("/api/v1/driver")
+@CrossOrigin
 public class DriverController {
     @Autowired
     private DriverService service;
