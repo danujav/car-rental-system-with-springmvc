@@ -18,6 +18,7 @@ import java.util.ArrayList;
  */
 @RestController
 @RequestMapping("/api/v1/login")
+@CrossOrigin
 public class LoginController {
 
     @Autowired
@@ -25,6 +26,7 @@ public class LoginController {
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity saveLogin(@RequestBody LoginDTO dto) {
+        System.out.println("Hey login");
         if (dto.getEmail().trim().length() <= 0 ) {
             throw new NotFoundException("Login user's email cannot be Empty!");
         }

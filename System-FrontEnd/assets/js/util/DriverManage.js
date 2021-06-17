@@ -5,8 +5,9 @@ $("#btnDriverSignUp").click(function () {
     let driverAge = $("#driverAge").val();
     let driverContactNumber = $("#driverContactNumber").val();
 
-    let formData = $("#formCustomer").serialize();
-    alert("sdfsd")
+    setLoginDetails();
+
+    /*let formData = $("#formCustomer").serialize();*/
     $.ajax({
         method: "POST",
         url: "http://localhost:8080/backend/api/v1/driver",
@@ -24,3 +25,23 @@ $("#btnDriverSignUp").click(function () {
         }
     });
 });
+
+function setLoginDetails() {
+    let driverPassword = $("#driverPassword").val();
+    let driverEmail = $("#driverEmail").val();
+
+    $.ajax({
+        method: "POST",
+        url: "http://localhost:8080/backend/api/v1/login",
+        contentType: 'application/json',
+        async: true,
+        data: JSON.stringify({
+            email : driverEmail,
+            pw : driverPassword,
+            status : "Driver",
+        }),
+        success: function (data) {
+            console.log(data);
+        }
+    });
+}

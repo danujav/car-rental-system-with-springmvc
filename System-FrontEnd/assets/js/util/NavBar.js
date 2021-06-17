@@ -4,7 +4,7 @@ var dashboardSection = document.getElementById('dashboardSection');
 var registerCustomerSection = document.getElementById('registerCustomerSection');
 var loginCustomerSection = document.getElementById('loginCustomerSection');
 var driverManageSection = document.getElementById('driverManageSection');
-var loginDriverSection = document.getElementById('loginDriverSection');btnDriverSign
+var loginDriverSection = document.getElementById('loginDriverSection');
 
 
 
@@ -43,6 +43,7 @@ registerCustomerBtn.addEventListener('click', function () {
     loginCustomerSection.style.display = "block";
     registerCustomerSection.style.display = "none";
     loginDriverSection.style.display = "none";
+    driverManageSection.style.display = "none";
 });
 btnRegisterDriver.addEventListener('click', function () {
         manageCarSection.style.display = "none";
@@ -50,6 +51,7 @@ btnRegisterDriver.addEventListener('click', function () {
         loginDriverSection.style.display = "block";
         registerCustomerSection.style.display = "none";
         loginCustomerSection.style.display = "none";
+        driverManageSection.style.display = "none";
 });
 
 
