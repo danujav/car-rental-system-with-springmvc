@@ -337,7 +337,28 @@ nav ul li ul li a {
     padding-bottom: 0;
     border-bottom: 0;
 }
+#p2 {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+#p3 {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+#p4 {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: 0;
+}
 #p-already {
+    margin-left: 55px;
+}
+#p-already3 {
+    margin-left: 55px;
+}
+#p-already4 {
     margin-left: 55px;
 }
 .btnReg {
